@@ -13,7 +13,7 @@ def derive_key(password, salt):
         iterations=100000,  # You can adjust the number of iterations based on your security requirements
         salt=salt,
         length=32,  # 32 bytes for AES-256
-        backend=default_backend
+        backend=default_backend()
     )
     return kdf.derive(password.encode('utf-8'))
 
