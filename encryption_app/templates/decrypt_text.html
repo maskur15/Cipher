@@ -10,14 +10,14 @@
                 <img  src="{% static 'encryption_app/images/cipher.svg' %}" height="100" width="200"  alt="">
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="title-msg" >Home of Secure Encrpytion</h5> <br>
+              <h5 class="card-title" id="title-msg" >Home of Secure Cipher</h5> <br>
        
         <div class="container">
         
             {% if text  %}
             <div id="copyContainer" class="form-group">
               <p id="messageText">Orginal Text: <span id="textValue">{{ text }}</span></p>
-              <button onclick="copyText()" class="btn btn-success">Copy Text</button>
+              <button onclick="copyText()" class="btn btn-primary">Copy</button>
             </div>
             {% else %}
             <form method="POST" enctype="multipart/form-data">
@@ -30,8 +30,8 @@
                   <input type="checkbox" onclick="myFunction()" >Show Password
             
                 </div>
-              <button type="submit" class="btn btn-primary" >Decrypt</button>
-              {% endif %}
+                <button type="submit" class="btn btn-primary" >Decrypt</button>
+                {% endif %}
             
               </form>
             

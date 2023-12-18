@@ -1,7 +1,7 @@
 {% if cipher_text  %}
 <div id="copyContainer" class="form-group">
   <p id="messageText">CipherText: <span id="textValue">{{cipher_text}}</span></p>
-  <button onclick="copyText()" class="btn btn-success">Copy</button>
+  <button onclick="copyText()" class="btn btn-primary">Copy</button>
 </div>
 {% else %}
 <form method="POST" enctype="multipart/form-data">

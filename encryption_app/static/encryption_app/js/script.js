@@ -1,6 +1,5 @@
 
 console.log('Ti it is ')
-console.log(image)
 
 function updateClock() {
     var now = new Date();

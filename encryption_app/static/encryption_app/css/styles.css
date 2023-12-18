@@ -2,3 +2,15 @@
 .hidden {
     display: none;
 }
+body{
+    background-image: url("{% static 'encryption_app/images/background.jpg' %}");
+}
+.card-body{
+    background-color: rgb(73 181 244 / 76%)!important;
+}
+.card-header,.card-footer{
+    background-color: rgb(36 143 206 / 44%)!important;
+}
+.btn-primary{
+ background-color: #bb21f3!important;
+}
