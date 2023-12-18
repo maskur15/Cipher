@@ -12,7 +12,8 @@ def derive_key(password, salt):
         algorithm=hashes.SHA256(),
         iterations=100000,  # You can adjust the number of iterations based on your security requirements
         salt=salt,
-        length=32  # 32 bytes for AES-256
+        length=32,  # 32 bytes for AES-256
+        backend=default_backend
     )
     return kdf.derive(password.encode('utf-8'))
 
@@ -51,22 +52,7 @@ def decrypt_text(password, combined_value):
 
 
 def cipherImage(request):
-    if request.method=='POST':
-        try:
-            uploaded_file = request.FILES['image']
-
-            # Generate a unique file name
-            file_name = default_storage.get_available_name(uploaded_file.name)
-
-            # Save the file to the MEDIA_ROOT using default_storage
-            path = default_storage.save('uploads/' + file_name, ContentFile(uploaded_file.read()))
-            print(path)
-            return render(request, 'encrypt_image.html', {'image_path':path})
-      
-
-        except Exception as e:
-            pass
-    return render(request,'encrypt_image.html')
+    pass
 def encrypt_stegano(request):
     return render(request,'stegano.html',{})
 def decryptText(request):
